@@ -1,7 +1,7 @@
 <template>
-  <q-layout>
-    <q-page-container>
-      <q-page padding class="q-pa-md flex flex-center">
+  <QLayout>
+    <QPageContainer>
+      <QPage padding class="q-pa-md flex flex-center">
         <div
           class="q-pa-md"
           style="max-width: 800px; width: 100%;"
@@ -9,21 +9,21 @@
           <header class="q-mb-md">
             <h2>Home</h2>
             <div class="q-gutter-md row items-center q-mb-md">
-              <q-input
+              <QInput
                 v-model="searchQuery"
                 placeholder="Search candidates"
                 filled
                 class="col"
               />
-              <q-btn
+              <QBtn
                 color="green"
                 @click="goToAddCandidate"
               >
                 Add Candidate
-              </q-btn>
+              </QBtn>
             </div>
           </header>
-          <q-table
+          <QTable
             :rows="filteredCandidates"
             :columns="columns"
             hide-pagination
@@ -33,35 +33,35 @@
             no-results-label="No results found"
           >
             <template v-slot:body-cell-full_name="props">
-              <q-td :props="props">
+              <QTd :props="props">
                 {{ props.row.first_name }} {{ props.row.last_name }}
-              </q-td>
+              </QTd>
             </template>
             <template v-slot:body-cell-email="props">
-              <q-td :props="props">
+              <QTd :props="props">
                 {{ props.row.email }}
-              </q-td>
+              </QTd>
             </template>
             <template v-slot:body-cell-skills="props">
-              <q-td :props="props">
+              <QTd :props="props">
                 {{ props.row.skills.join(', ') }}
-              </q-td>
+              </QTd>
             </template>
             <template v-slot:body-cell-actions="props">
-              <q-td :props="props">
-                <q-btn
+              <QTd :props="props">
+                <QBtn
                   color="primary"
                   @click="goToEditCandidate(props.row.id)"
                 >
                   Edit
-                </q-btn>
-              </q-td>
+                </QBtn>
+              </QTd>
             </template>
-          </q-table>
+          </QTable>
         </div>
-      </q-page>
-    </q-page-container>
-  </q-layout>
+      </QPage>
+    </QPageContainer>
+  </QLayout>
 </template>
 
 <script setup lang="ts">

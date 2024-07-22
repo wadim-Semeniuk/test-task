@@ -1,7 +1,7 @@
 <template>
-  <q-layout>
-    <q-page-container>
-      <q-page
+  <QLayout>
+    <QPageContainer>
+      <QPage
         padding
         class="q-pa-md flex flex-center"
       >
@@ -12,22 +12,22 @@
           <h3>
             {{ title }}
           </h3>
-          <q-form @submit.prevent="onSubmit">
-            <q-input
+          <QForm @submit.prevent="onSubmit">
+            <QInput
               filled
               v-model="formData.first_name"
               label="First Name"
               :error="!!errors.first_name"
               :error-message="errors.first_name"
             />
-            <q-input
+            <QInput
               filled
               v-model="formData.last_name"
               label="Last Name"
               :error="!!errors.last_name"
               :error-message="errors.last_name"
             />
-            <q-input
+            <QInput
               filled
               v-model="formData.email"
               type="email"
@@ -35,53 +35,53 @@
               :error="!!errors.email"
               :error-message="errors.email"
             />
-            <q-input
+            <QInput
               filled
               v-model="formData.bio"
               type="textarea"
               label="Bio"
             />
-            <q-field
+            <QField
               label="Skills"
               class="q-mb-md"
             >
               <template v-slot:after>
-                <q-banner
+                <QBanner
                   v-if="errors.skills"
                   class="text-red-10"
                 >
                   {{ errors.skills }}
-                </q-banner>
+                </QBanner>
               </template>
-              <q-item
+              <QItem
                 v-for="(skill, index) in formData.skills"
                 :key="index"
                 class="q-mb-sm"
               >
-                <q-input
+                <QInput
                   v-model="formData.skills[index]"
                   label="Skill"
                   filled
                   class="q-mb-sm"
                 />
-                <q-btn
+                <QBtn
                   flat
                   dense
                   icon="delete"
                   @click="removeSkill(index)"
                   class="q-ml-sm"
                 />
-              </q-item>
-              <q-btn
+              </QItem>
+              <QBtn
                 flat
                 icon="add"
                 class="q-mt-md"
                 @click="addSkill"
               >
                 Add Skill
-              </q-btn>
-            </q-field>
-            <q-file
+              </QBtn>
+            </QField>
+            <QFile
               filled
               v-model="formData.resume_file as File"
               label="Resume"
@@ -89,7 +89,7 @@
               :error-message="errors.resume_file"
               @change="handleFileUpload"
             />
-            <q-input
+            <QInput
               filled
               v-model="formData.github_url"
               type="url"
@@ -98,22 +98,22 @@
               :error-message="errors.github_url"
             />
             <div class="q-gutter-md q-mb-md">
-              <q-btn
+              <QBtn
                 label="Back"
                 color="secondary"
                 @click="goBack"
               />
-              <q-btn
+              <QBtn
                 type="submit"
                 label="Save"
                 color="primary"
               />
             </div>
-          </q-form>
+          </QForm>
         </div>
-      </q-page>
-    </q-page-container>
-  </q-layout>
+      </QPage>
+    </QPageContainer>
+  </QLayout>
 </template>
 
 <script setup lang="ts">
