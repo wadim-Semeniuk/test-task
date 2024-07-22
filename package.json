@@ -1,0 +1,25 @@
+{
+  "name": "test-task",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "nuxt": "^3.12.4",
+    "pinia": "^2.1.7",
+    "quasar": "^2.16.6",
+    "typescript": "^5.5.3",
+    "vee-validate": "^4.13.2",
+    "vue": "3.4.26",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@quasar/extras": "^1.16.12",
+    "@quasar/vite-plugin": "^1.7.0",
+    "sass-loader": "^14.2.1",
+    "sass": "^1.77.8"
+  }
+}
